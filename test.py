@@ -17,7 +17,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 		#case 2, A is rational number and B is rational number p/q form
 		solution = self.app.get('/add?A=1/2&B=1/3')
-		self.assertEqual(b'0.833333333333', solution.data)
+		self.assertEqual(b'0.83333333333', solution.data)
 
 	def test_add3(self):
 
