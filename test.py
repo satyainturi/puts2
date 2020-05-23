@@ -11,19 +11,19 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 	def test_add1(self):
 		#case 1, A is n integer B is an integer
-		solution = self.app.get('/add?A=20&B=2')
+		solution = self.app.get('/add?A=13&B=3')
 		self.assertEqual(b'22.0', solution.data)
 
 	def test_add2(self):
 
 		#case 2, A is rational number and B is rational number p/q form
-		solution = self.app.get('/add?A=3/2&B=1/2')
+		solution = self.app.get('/add?A=1/2&B=1/3')
 		self.assertEqual(b'2.0', solution.data)
 
 	def test_add3(self):
 
 		#case 3, A is a float and B is a float
-		solution = self.app.get('/add?A=122.22&B=1.002')
+		solution = self.app.get('/add?A=22.02&B=0.002')
 		self.assertEqual(b'123.222', solution.data)
 
 	def test_add4(self):
@@ -76,21 +76,21 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		solution = self.app.get('add?A=12&B=2/0')
 		self.assertEqual(b"None", solution.data)
 
-    def test_sub1(self):
+	def test_sub1(self):
 		#case 1, A is n integer B is an integer
-		solution = self.app.get('/sub?A=6&B=2')
+		solution = self.app.get('/sub?A=3&B=2')
 		self.assertEqual(b'4.0', solution.data)
 
 	def test_sub2(self):
 
 		#case 2, A is rational number and B is rational number p/q form
-		solution = self.app.get('/sub?A=3/2&B=1/2')
+		solution = self.app.get('/sub?A=1/2&B=1/3')
 		self.assertEqual(b'1.0', solution.data)
 
 	def test_sub3(self):
 
 		#case 3, A is a float and B is a float
-		solution = self.app.get('/sub?A=10.2&B=1.002')
+		solution = self.app.get('/sub?A=10.2&B=0.002')
 		self.assertEqual(b'9.198', solution.data)
 
 	def test_sub4(self):
@@ -218,7 +218,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 	def test_div2(self):
 
 		#case 2, A is rational number and B is rational number p/q form
-		solution = self.app.get('/div?A=3/2&B=22/4')
+		solution = self.app.get('/div?A=1/2&B=22/4')
 		self.assertEqual(b'0.272727272727', solution.data)
 
 	def test_div3(self):
