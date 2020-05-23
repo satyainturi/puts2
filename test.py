@@ -17,8 +17,8 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 	def test_div2(self):
 
 		#case 2, A is rational number and B is rational number p/q form
-		solution = self.app.get('/div?A=3/2&B=22/4')
-		self.assertEqual(b'0.272727272727', solution.data)
+		solution = self.app.get('/div?A=1/2&B=22/4')
+		self.assertEqual(b'0.0909090909091', solution.data)
 
 	def test_div3(self):
 
@@ -75,6 +75,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		#case 11, when A input is any number and B=p/q form where q=0
 		solution = self.app.get('div?A=12&B=2/0')
 		self.assertEqual(b'None', solution.data)
+
 
 
 if __name__ == '__main__':
