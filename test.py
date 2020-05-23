@@ -10,20 +10,20 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 	def test_add1(self):
 		#case 1, A is n integer B is an integer
-		solution = self.app.get('/add?A=20&B=2')
-		self.assertEqual(b'22.0', solution.data)
+		solution = self.app.get('/add?A=13&B=3')
+		self.assertEqual(b'16.0', solution.data)
 
 	def test_add2(self):
 
 		#case 2, A is rational number and B is rational number p/q form
-		solution = self.app.get('/add?A=3/2&B=1/2')
-		self.assertEqual(b'2.0', solution.data)
+		solution = self.app.get('/add?A=1/2&B=1/3')
+		self.assertEqual(b'0.833333333333', solution.data)
 
 	def test_add3(self):
 
 		#case 3, A is a float and B is a float
-		solution = self.app.get('/add?A=122.22&B=1.002')
-		self.assertEqual(b'123.222', solution.data)
+		solution = self.app.get('/add?A=22.02&B=0.002')
+		self.assertEqual(b'22.022', solution.data)
 
 	def test_add4(self):
 
