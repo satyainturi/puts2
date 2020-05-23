@@ -10,20 +10,20 @@ class TestCalculator(unittest.TestCase):#unittest odule provides a set of tools 
 
 	def test_sub1(self):
 		#case 1, A is n integer B is an integer
-		solution = self.app.get('/sub?A=6&B=2')
-		self.assertEqual(b'4.0', solution.data)
+		solution = self.app.get('/sub?A=3&B=2')
+		self.assertEqual(b'1.0', solution.data)
 
 	def test_sub2(self):
 
 		#case 2, A is rational number and B is rational number p/q form
-		solution = self.app.get('/sub?A=3/2&B=1/2')
-		self.assertEqual(b'1.0', solution.data)
+		solution = self.app.get('/sub?A=1/2&B=1/3')
+		self.assertEqual(b'0.166666666667', solution.data)
 
 	def test_sub3(self):
 
 		#case 3, A is a float and B is a float
-		solution = self.app.get('/sub?A=10.2&B=1.002')
-		self.assertEqual(b'9.198', solution.data)
+		solution = self.app.get('/sub?A=10.2&B=0.002')
+		self.assertEqual(b'10.198', solution.data)
 
 	def test_sub4(self):
 
